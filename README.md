@@ -1,22 +1,30 @@
 # Prime Genesis — Distribution
 
-Distribution repository for the AgentTeam desktop app (macOS + Windows). **Installers are not stored
-in git** — they are attached to [**Releases**](https://github.com/itechchoice/prime-genesis-releases/releases).
+Distribution repository for the **Prime Genesis** desktop app (macOS + Windows). **Installers are not
+stored in git** — they are attached to [**Releases**](https://github.com/itechchoice/prime-genesis-releases/releases).
 This repository only tracks docs, changelogs, and checksums.
 
-## Two channels
+> ### Naming
+> The app was previously distributed as **AgentTeam**. That name is being **retired in favor of
+> Prime Genesis** — it is **one app, not two**. The only build that still carries the old `AgentTeam`
+> name is the current stable release (**v0.7.1**). Every preview build, and every future release, uses
+> **Prime Genesis**.
 
-| Channel | Folder | GitHub release | App name | For |
+## Two channels (same app)
+
+| Channel | Folder | GitHub release | Installer name today | For |
 |---|---|---|---|---|
-| **Stable** | [`stable/`](./stable/) | normal release, tagged `vX.Y.Z`, marked **Latest** | `AgentTeam` | day-to-day use |
-| **Preview** | [`preview/`](./preview/) | **pre-release**, tagged `vX.Y.Z-preview`, badged **Pre-release** (never *Latest*) | `Prime-Genesis` | early testing, may be unstable |
+| **Stable** | [`stable/`](./stable/) | normal release, tagged `vX.Y.Z`, marked **Latest** | `AgentTeam-*` *(legacy name — v0.7.1)* | day-to-day use |
+| **Preview** | [`preview/`](./preview/) | **pre-release**, tagged `vX.Y.Z-preview`, badged **Pre-release** (never *Latest*) | `Prime-Genesis-*` | early testing, may be unstable |
 
-Each channel has its own `README.md`, `CHANGELOG.md`, and `checksums/`. GitHub's own **Latest vs
-Pre-release** distinction is the primary separator: anyone following the normal download path always
-gets Stable — the Preview build only shows up under the *Pre-release* badge.
+The two channels are the **same product** — they differ in **stability, not identity**. GitHub's own
+**Latest vs Pre-release** distinction is the primary separator: anyone following the normal download
+path always gets Stable; the Preview build only appears under the *Pre-release* badge.
 
-> The two builds use **different product names** (`AgentTeam` vs `Prime-Genesis`), so they install
-> **side by side** without overwriting each other.
+> **Side-by-side install:** because the legacy `AgentTeam` build and the `Prime-Genesis` build use
+> different bundle names, a Prime Genesis (preview) install sits **next to** an existing AgentTeam
+> install without overwriting it. Once the stable channel also moves to Prime Genesis, a new release
+> replaces the previous one in place (same name).
 
 ## ⚠️ Security notice (internal distribution)
 

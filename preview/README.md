@@ -1,11 +1,13 @@
 # Prime Genesis — Preview channel
 
-Pre-release builds of the desktop app for early testing. **Preview builds may be unstable.** For
-day-to-day use, get the Stable channel instead → [`../stable/`](../stable/).
+Pre-release builds of the **Prime Genesis** desktop app for early testing. **Preview builds may be
+unstable.** For day-to-day use, get the Stable channel instead → [`../stable/`](../stable/).
 
-Preview installers are published as **GitHub Pre-releases** (badged *Pre-release*, never *Latest*) and
-carry the product name **`Prime-Genesis`**, so a preview install sits **side by side** with a Stable
-`AgentTeam` install — they do not overwrite each other.
+Preview installers are published as **GitHub Pre-releases** (badged *Pre-release*, never *Latest*)
+under the app's going-forward name, **`Prime-Genesis`**. (The current stable build still uses the app's
+former name, `AgentTeam` — see the [top-level README](../README.md); it's the same app, mid-rename.)
+Because the two use different bundle names, a preview install sits **side by side** with an existing
+`AgentTeam` install without overwriting it.
 
 ## Download
 

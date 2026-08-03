@@ -1,9 +1,14 @@
-# Prime Genesis — AgentTeam Installers
+# Prime Genesis — Stable channel (legacy name: AgentTeam)
 
-Distribution repository for the AgentTeam desktop app (macOS + Windows). **Installers are not stored
+Stable installers of the **Prime Genesis** desktop app (macOS + Windows). **Installers are not stored
 in git** — download them from
 [**Releases**](https://github.com/itechchoice/prime-genesis-releases/releases). This repository only
 tracks the docs, changelog, and checksums.
+
+> **Legacy name:** this stable release is still branded **AgentTeam**, the app's former name.
+> AgentTeam is being **retired in favor of Prime Genesis** (see the [top-level README](../README.md)) —
+> it's the same app. The file names below reflect the current **v0.7.1** build; future stable releases
+> will ship under the **Prime Genesis** name.
 
 ## Download
 
@@ -41,7 +46,7 @@ gateway; it does not rely on individual vendor keys (Anthropic / OpenAI / Google
 
 ```bash
 # macOS
-shasum -a 256 -c v0.7.1.sha256
+shasum -a 256 -c checksums/v0.7.1.sha256
 # Windows (PowerShell)
 Get-FileHash AgentTeam-0.7.1-x64-setup.exe -Algorithm SHA256
 ```
