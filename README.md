@@ -26,13 +26,14 @@ path always gets Stable; the Preview build only appears under the *Pre-release* 
 > install without overwriting it. Once the stable channel also moves to Prime Genesis, a new release
 > replaces the previous one in place (same name).
 
-## ⚠️ Security notice (internal distribution)
+## Security notice
 
-- This repository is **private**, and the installers have the **Nexus gateway key baked in** — anyone
-  with access to this repo or the installers can extract that key. Keep the collaborator list minimal;
-  if the key is suspected to have leaked, **rotate it on the gateway side**.
-- **Do not make this repository public, and do not hand the installers to external customers.**
-  External distribution requires a BYO build with no baked-in key. This applies to **both** channels.
+- This repository is **public**. Current preview installers contain service addresses but **no shared
+  API keys**; users sign in for per-user gateway credentials and supply their own vendor keys where a
+  modality tool requires one.
+- Legacy artifacts may have embedded shared credentials. Treat any such credential as exposed and
+  rotate it at the service. Never publish a new installer until its packaged resources have been
+  checked for local or shared keys.
 
 ## Versions
 

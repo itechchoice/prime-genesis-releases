@@ -11,15 +11,16 @@ Because the two use different bundle names, a preview install sits **side by sid
 
 ## Download
 
-Go to [Releases](https://github.com/itechchoice/prime-genesis-releases/releases) and pick the release
-tagged `…-preview`:
+Go to [Releases](https://github.com/itechchoice/prime-genesis-releases/releases) and pick a release
+tagged `vX.Y.Z-preview.N`:
 
 | Platform | File | Notes |
 |---|---|---|
-| macOS (Apple Silicon / M-series) | `Prime-Genesis-<version>-preview-arm64.dmg` | **arm64 only** — Intel Macs are not supported |
-| Windows 11 (x64) | `Prime-Genesis-<version>-preview-x64-setup.exe` | NSIS installer |
+| macOS (Apple Silicon / M-series) | `Prime-Genesis-<version>-arm64.dmg` | **arm64 only** — Intel Macs are not supported |
+| Windows 11 (x64) | `Prime-Genesis-<version>-x64-setup.exe` | NSIS installer |
+| Windows 11 (x64) | `Prime-Genesis-<version>-win.zip` | Portable archive |
 
-> Every preview release ships a `<version>-preview.sha256`. Verify integrity after downloading.
+> Every preview release ships a `v<version>.sha256`. Verify integrity after downloading.
 
 ## Install
 
@@ -33,10 +34,9 @@ The installer is **unsigned**, so SmartScreen will warn on first run → **More 
 
 ## First launch
 
-Like the Stable build, the preview **ships with the company Nexus gateway pre-configured (gateway URL +
-access key)** and works out of the box — no API key entry required. All LLM traffic is routed through
-the Nexus gateway. See the security notice in the [top-level README](../README.md) — the baked key is
-extractable, so this is internal distribution only.
+The preview ships with staging service addresses configured, but **does not contain shared API keys**.
+Sign in so the gateway can issue your own credential. If an upgrade stops authenticating, sign out and
+back in.
 
 > Modality features (image / video / voiceover / speech-to-text) call vendor REST APIs directly and do
 > not go through the chat gateway; those still require the corresponding vendor key.
@@ -47,7 +47,7 @@ extractable, so this is internal distribution only.
 
 ```bash
 # macOS
-shasum -a 256 -c checksums/v0.7.2-preview.sha256
+shasum -a 256 -c checksums/v0.8.0-preview.1.sha256
 # Windows (PowerShell)
-Get-FileHash Prime-Genesis-0.7.2-preview-x64-setup.exe -Algorithm SHA256
+Get-FileHash Prime-Genesis-0.8.0-preview.1-x64-setup.exe -Algorithm SHA256
 ```

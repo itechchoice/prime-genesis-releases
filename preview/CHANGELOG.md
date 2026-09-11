@@ -3,6 +3,48 @@
 Pre-release build history (newest first). Preview builds are published as GitHub Pre-releases and may
 be unstable. Stable history lives in [`../stable/CHANGELOG.md`](../stable/CHANGELOG.md).
 
+## v0.8.0-preview.1
+
+**Product name**: `Prime-Genesis` (installs side by side with the Stable `AgentTeam` build)
+
+**Platforms**: macOS arm64 (`.dmg`) · Windows 11 x64 (`.exe` installer + portable `.zip`, cross-compiled)
+
+**Base**: `feature/PG-138-sdlc-program-layer` @ `eb10e663` (merge-base with `develop`: `de62015d`).
+Version metadata is `0.8.0-preview.1`. Staging service addresses are baked in, but **no API keys** are
+included; users sign in for per-user gateway credentials.
+
+**What changed since v0.7.2-preview.6**:
+- **Programs are now a first-class SDLC layer** — start from an objective, select and freeze a phase
+  set, assign Architect and Executor roles, pin a code baseline, and run phase-by-phase work from the
+  Production line.
+- **Human gates and decision provenance** — phase approval, rejection, in-place rework, upstream
+  return, abandonment, and final delivery are explicit decisions with recorded attribution.
+- **Evidence-backed execution** — every step records evidence packets, judge dimension scores, gate
+  results, artifact versions, model usage, and a final evidence-set commitment.
+- **Bounded retry and recovery** — a judge rejection can trigger a controlled retry of the current
+  step; live status updates and restart recovery keep the UI and durable run state aligned.
+- **Twelve bilingual SDLC phase templates** — Programs can use the full lifecycle or a deliberately
+  trimmed phase set after acknowledging the consequences. Inputs, uploads, and converted source
+  documents stay attached to the Program.
+- **Workspace isolation** — Programs pin a git baseline and execute in dedicated branches/worktrees,
+  with protections for reset, abandonment, and concurrent Programs.
+- **Installed-build smoke test** — the final keyless macOS installer created and delivered PRG-018 as
+  a one-phase UAT Program. Both steps received `ADVANCE`; a separate one-phase run also exercised and
+  recovered from the bounded retry path before delivery.
+
+**Known limitations**:
+- **Preview / pre-release build — may be unstable.** Prefer the Stable channel for day-to-day use.
+- Both installers are **unsigned**; first launch must pass Gatekeeper / SmartScreen (macOS: right-click
+  → Open; Windows: More info → Run anyway).
+- macOS is **arm64 only**.
+- Windows is cross-compiled and **not tested on real Windows 11**. Its package excludes the macOS-only
+  PDF renderer, browser checker, and sandbox runtime.
+- Packaged builds do not ship the native `claude` binary required by the optional `claude-code` engine.
+- Image / video / voiceover / speech-to-text call vendors directly and require the corresponding
+  user-supplied vendor key.
+- The Program creation form currently says that omitting a workspace path behaves like no filesystem,
+  but creation still requires a workspace path.
+
 ## v0.7.2-preview.3
 
 **Product name**: `Prime-Genesis` (installs side by side with the Stable `AgentTeam` build)
